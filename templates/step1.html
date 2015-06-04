@@ -1,0 +1,218 @@
+<div class="container">
+ 
+<div  class="row">
+	<div class="col-lg-8 col-lg-offset-2 well bs-component">
+<form class="form-horizontal">
+<fieldset>
+                  <legend>Sample Classroom Observation v2.1 - STEP 2014</legend>
+                 <div class="form-group">
+                    <label class="col-lg-3 control-label">School</label>
+                    <div class="col-lg-9">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" ng-model="classroom.school" >
+                          SARA's - Koramangala
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" ng-model="classroom.school">
+                         SARA's Vinayak Nagar
+                        </label>
+                      </div>
+					   <div class="radio">
+                        <label>
+                          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option3" ng-model="classroom.school">
+                         RK School Vinayak Nagar
+                        </label>
+                      </div>
+					   <div class="radio">
+                        <label>
+                          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option4" ng-model="classroom.school">
+                         Government School
+                        </label>
+                      </div>
+					  <div class="radio">
+                        <label>
+                          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option5" ng-model="classroom.school">
+                         Others
+                        </label>
+						   <input type="text" ng-model="classroom.otherSchool" class="margin10 input-sm" ng-show="classroom.school=='option5'">
+                      </div>
+					  
+                    </div>
+                  </div>
+                </fieldset>
+
+<fieldset>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Class</label>
+  <div class="col-lg-3">
+    <select ng-model="classroom.number" class="form-control input-sm">
+      <option value="LKG">LKG</option>
+      <option value="UKG">UKG</option>
+      <option value="one">1</option>
+      <option value="two">2</option>
+      <option value="three">3</option>
+      <option value="four">4</option> 
+      <option value="five">5</option> 
+      <option value="six">6</option>
+      <option value="seven">7</option>
+      <option value="eight">8</option>
+    </select>
+  </div>
+</div>
+</fieldset>
+<fieldset>
+<div class="form-group">
+  <label class="col-sm-3 control-label">Students Present</label>
+  <div class="col-sm-3">
+  <input type="text" class="form-control  input-sm" ng-model="classroom.studentPresent">
+  </div>
+</div>
+</fieldset>
+<fieldset>
+<div class="form-group">
+<label class="col-sm-3 control-label">Subject/Lesson</label>
+  <div class="col-lg-9">
+  
+    <div class="radio">
+          <label>
+          <input type="radio" ng-model="classroom.subject" value="English" /> English
+          </label>
+    </div>      
+  
+
+
+  
+    <div class="radio">
+          <label>
+          <input type="radio" ng-model="classroom.subject" value="Mathematics" /> Mathematics
+          </label>
+    </div>      
+
+
+   
+    <div class="radio">
+          <label>
+          <input type="radio" ng-model="classroom.subject" value="Science or Social" /> Science or Social
+          </label>
+    </div>      
+
+
+  
+    <div class="radio">
+          <label>
+         <input type="radio" ng-model="classroom.subject" value="Others" />Others
+          </label>
+		<input type="text" ng-model="classroom.othersubject" class="margin10 input-sm" ng-show="classroom.subject=='Others'">
+    </div>      
+</div>
+</div>
+</fieldset>
+<fieldset>
+<label class="col-sm-12">Was the above info(subject and lesson topic) displayed on black-board</label>
+<div class="form-group">
+  <div class="col-sm-offset-3 col-sm-10">
+   <div class="radio">
+     <label><input type="radio" ng-model="classroom.info" value="Yes" />Yes</label>
+    </div>
+  </div>
+  <div class="col-sm-offset-3 col-sm-10">
+   <div class="radio">
+     <label><input type="radio" ng-model="classroom.info" value="No" />No</label>
+    </div>
+  </div>
+</div>
+</fieldset>
+<fieldset>
+<div class="form-group">
+<div class="row">
+  <label class="col-sm-3 control-label">Teacher Name/Reft</label>
+  <div class="col-sm-3">
+  <input type="text" class="form-control  input-sm" ng-model="classroom.Teacher">
+  </div>
+  </div>
+</div>
+</fieldset>
+<fieldset>
+ <label class="col-sm-12 ">Which of the following slots during class period(of 40 minutes) are you observing? </label>
+<div class="form-group">
+  <div class="col-sm-offset-3 col-sm-10">
+   <div class="radio">
+    <label><input type="radio" ng-model="classroom.slot" value="Full lesson observation" />Full lesson observation</label>
+    </div>
+  </div>
+  <div class="col-sm-offset-3 col-sm-10">
+   <div class="radio">
+    <label><input type="radio" ng-model="classroom.slot" value="First 10 minutes of class" />First 10 minutes of class</label>
+    </div>
+  </div>
+  <div class="col-sm-offset-3 col-sm-10">
+   <div class="radio">
+    <label><input type="radio" ng-model="classroom.slot" value="Last 10 minutes of class" />Last 10 minutes of class</label>
+    </div>
+  </div>
+  <div class="col-sm-offset-3 col-sm-10">
+   <div class="radio">
+    <label><input type="radio" ng-model="classroom.slot" value="Half-way(15-20 minutes after class start)" />Half-way(15-20 minutes after class start)</label>
+  </div>
+</div>
+</div>
+</fieldset>
+<fieldset>
+<div class="form-group">
+<label class="col-sm-3 control-label">Time of observation</label>
+
+  <div class="col-sm-9">
+   <div class="radio">
+    <label><input type="radio" ng-model="classroom.time" value="Pre-lunch session" />Pre-lunch session</label>
+    </div>
+  </div>
+  <div class="col-sm-offset-3 col-sm-10">
+   <div class="radio">
+    <label><input type="radio" ng-model="classroom.time" value=" Post-lunch session" />Post-lunch session</label>
+    </div>
+  </div>
+</div>
+</fieldset>
+<fieldset>
+<div class="form-group">
+<label class="col-sm-3 control-label">Observed by</label>
+
+  <div class="col-sm-9">
+   <div class="radio">
+    <label><input type="radio" ng-model="classroom.observer" value="Medha" />Medha</label>
+    </div>
+  </div>
+  <div class="col-sm-offset-3 col-sm-10">
+   <div class="radio">
+    <label><input type="radio" ng-model="classroom.observer" value="Santosh" />Santosh</label>
+    </div>
+  </div>
+  <div class="col-sm-offset-3 col-sm-10">
+   <div class="radio">
+    <label><input type="radio" ng-model="classroom.observer" value="Anoop" />Anoop</label>
+    </div>
+  </div>
+  <div class="col-sm-offset-3 col-sm-2">
+    <div class="radio">
+        <label><input type="radio" ng-model="classroom.observer" value="other" />Others</label>
+       <input type="text" ng-model="classroom.otherobserver" class="margin10 input-sm" ng-show="classroom.observer=='other'">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-1 col-lg-offset-10">
+       <button type="button" ng-click="stepTwo()" class="col-sm-offset-2 btn btn-info">Next</button>
+    </div>
+  </div>
+
+
+</div>
+</fieldset>
+</div>
+</form>
+</div>
+</div>
+</div>

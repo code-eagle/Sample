@@ -1,0 +1,19 @@
+   <!--login form view start-->
+    <div class="login-container" >
+            <div id="output"></div>
+            <div class="avatar"></div>
+            <div class="form-box">
+                <form action="" novalidate name="login"  method="">
+                    <input type="email"  ng-required="isRequired"  class="form-control" placeholder="email" name="email" ng-model="login.username">
+                    <span ng-show="login.email.$error.required">email is required.</span>
+                    <input type="password"  ng-required="isRequired"  class="form-control" placeholder="password"  name="pwd" ng-model="login.password">
+                    <span ng-show="login.pwd.$error.required">password is required.</span>                   
+                    <button class="btn btn-info btn-block login" ng-click="signin()" type="submit">Login</button>
+                </form>
+            </div>  
+        </div>
+    <!--login form view end-->
+
+
+
+

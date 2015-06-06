@@ -1,7 +1,28 @@
-  <gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="ldpi" />
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.classroomapp"
+        versionCode = "10" 
+        version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Classroom App</name>
+
+    <description>
+        An example for phonegap build docs. 
+    </description>
+
+
+
+<gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="ldpi" />
 <gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="mdpi" />
 <gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="hdpi" />
 <gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="xhdpi" />
 <gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="fr-xhdpi" />
 <gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="port-xxhdpi" />
 <gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="land-xxhdpi" />
+</widget>
+
+  
+

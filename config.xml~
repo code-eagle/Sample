@@ -1,0 +1,5 @@
+<platform name="android">
+    <!-- you can use any density that exists in the Android project -->
+    <splash src="img/splash.jpg" density="land-hdpi"/>
+    
+</platform>

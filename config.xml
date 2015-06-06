@@ -1,5 +1,7 @@
-<platform name="android">
-    <!-- you can use any density that exists in the Android project -->
-    <splash src="img/splash.jpg" density="land-hdpi"/>
-    
-</platform>
+  <gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="ldpi" />
+<gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="mdpi" />
+<gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="hdpi" />
+<gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="xhdpi" />
+<gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="fr-xhdpi" />
+<gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="port-xxhdpi" />
+<gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="land-xxhdpi" />

@@ -13,7 +13,7 @@
         An example for phonegap build docs. 
     </description>
 
-
+<gap:plugin name="org.apache.cordova.splashscreen" />
 
 <gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="ldpi" />
 <gap:splash src="img/splash.jpg" gap:platform="android" gap:qualifier="mdpi" />

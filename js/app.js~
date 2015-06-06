@@ -1,7 +1,7 @@
 
 // create our angular app and inject ngAnimate and ui-router 
 // =============================================================================
-angular.module('classroomApp', ['ngAnimate', 'ui.router','firebase','angular-loading-bar'])
+angular.module('classroomApp', ['ngAnimate', 'ui.router','firebase'])
 
 // configuring our routes 
 // =============================================================================
@@ -77,7 +77,7 @@ if($scope.login.$invalid)
 
         }, function(error) {
             //Failure callback
-		$scope.serverError="Authentication Failure";
+		$scope.serverError=error.message;
             console.log('Authentication failure',error);
         });
 
@@ -175,8 +175,6 @@ $scope.logout=function(){
 		$scope.classroom.learning=$scope.classroom.otherlearning;
 		}
 		$scope.require=false;
-		$scope.require2=false;
-		$scope.require3=false;
 		$scope.step={};
 		$scope.step.switched="step1";
 		$scope.formStep1={"form":{}};
@@ -192,7 +190,7 @@ $scope.logout=function(){
 		$scope.step.switched="step2";
 		}
 		$scope.stepThree = function() {
-		$scope.require2=true;
+		$scope.require=true;
 		$scope.isRequired = true;
 			if($scope.formStep2.form.$invalid){
 				return;
@@ -200,7 +198,7 @@ $scope.logout=function(){
 		$scope.step.switched="step3";}
 		
 		$scope.saveData = function(){
-		$scope.require3=true;
+		$scope.require=true;
 		$scope.isRequired = true;
 			if($scope.formStep3.form.$invalid){
 				return;

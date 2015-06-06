@@ -3,7 +3,7 @@
  
 <div  class="row">
 	<div class="col-lg-8 col-lg-offset-2 well bs-component">
-<form class="form-horizontal">
+<form class="form-horizontal" name="formStep3.form">
 	<fieldset>
 <legend>Teacher Actions</legend>
 <legend>After observing for 7-10 minutes(or even as you observe), from the list given below, select based on all that was observed in this teacher's class. This should help us highlight the teacher's planning and preparation</legend>
@@ -11,11 +11,14 @@
 <label class="col-lg-9">There was some evidence of an order or flow in the lesson (eg. I do-We do-You do process)</label>
  <div class="col-lg-9">
  <div class="radio">
-<label><input type="radio" ng-model="classroom.order" value="Yes" />Yes</label></div>
+<label><input type="radio"  name="optionsOrder" ng-model="classroom.order" value="Yes" ng-required="!classroom.order" />Yes</label></div>
  <div class="radio">
-<label><input type="radio" ng-model="classroom.order" value="No" />No</label></div>
+<label><input type="radio" name="optionsOrder" ng-model="classroom.order" value="No" ng-required="!classroom.order"/>No</label></div>
  <div class="radio">
-<label><input type="radio" ng-model="classroom.order" value="Unclear" />Unclear</label></div>
+<label><input type="radio" name="optionsOrder"  ng-model="classroom.order" value="Unclear" ng-required="!classroom.order" />Unclear</label>
+ 
+</div>
+<span ng-show="formStep3.form.optionsOrder.$error.required && require3">required field</span>
 </div>
 </div>
 <div class="form-group">
@@ -23,11 +26,14 @@
 <label class="col-lg-10">(effective procedures for passing papers/notes, reminders and clear instructions from teacher, explicit mention of time etc)</label>
   <div class="col-lg-9">
  <div class="radio">
-<label><input type="radio" ng-model="classroom.effectiveTime" value="Yes" />Yes</label></div>
+<label><input type="radio" name="optionsEffectiveTime" ng-model="classroom.effectiveTime" value="Yes" ng-required="!classroom.effectiveTime"  />Yes</label></div>
  <div class="radio">
-<label><input type="radio" ng-model="classroom.effectiveTime" value="No" />No</label></div>
+<label><input type="radio" name="optionsEffectiveTime" ng-model="classroom.effectiveTime" value="No" ng-required="!classroom.effectiveTime" />No</label></div>
  <div class="radio">
-<label><input type="radio" ng-model="classroom.effectiveTime" value="Unsure" />Unsure</label></div>
+<label><input type="radio" name="optionsEffectiveTime" ng-model="classroom.effectiveTime" value="Unsure" ng-required="!classroom.effectiveTime"/> Unsure</label>
+
+</div>
+<span ng-show="formStep3.form.optionsEffectiveTime.$error.required && require3">required field</span> 
 </div>
 </div>
 <div class="form-group">
@@ -35,11 +41,14 @@
 <label class="col-lg-10">(could be ineffective transitions/lack of procedures/ unclear instructions from teacher etc)</label>
  <div class="col-lg-9">
  <div class="radio">
-<label><input type="radio" ng-model="classroom.ineffectiveTime" value="Yes" />Yes</label></div>
+<label><input type="radio" name="optionsIneffectiveTime" ng-model="classroom.ineffectiveTime" value="Yes" ng-required="!classroom.ineffectiveTime" />Yes</label></div>
 <div class="radio">
-<label><input type="radio" ng-model="classroom.ineffectiveTime" value="No" />No</label></div>
+<label><input type="radio" name="optionsIneffectiveTime" ng-model="classroom.ineffectiveTime" value="No" ng-required="!classroom.ineffectiveTime" />No</label></div>
 <div class="radio">
-<label><input type="radio" ng-model="classroom.ineffectiveTime" value="Unsure" />Unsure</label></div>
+<label><input type="radio" name="optionsIneffectiveTime" ng-model="classroom.ineffectiveTime" value="Unsure" ng-required="!classroom.ineffectiveTime" />Unsure</label>
+
+</div>
+<span ng-show="formStep3.form.optionsIneffectiveTime.$error.required && require3">required field</span> 
 </div>
 </div>
 
@@ -49,11 +58,14 @@
 <label class="col-lg-10">(any instance in the observed duration)</label>
  <div class="col-lg-9">
  <div class="radio">
-<label><input type="radio" ng-model="classroom.positiveTone" value="Yes" />Yes</label></div>
+<label><input type="radio" name="optionsPositiveTone" ng-model="classroom.positiveTone" value="Yes" ng-required="!classroom.positiveTone" />Yes</label></div>
 <div class="radio">
-<label><input type="radio" ng-model="classroom.positiveTone" value="No" />No</label></div>
+<label><input type="radio" name="optionsPositiveTone" ng-model="classroom.positiveTone" value="No" ng-required="!classroom.positiveTone" />No</label></div>
 <div class="radio">
-<label><input type="radio" ng-model="classroom.positiveTone" value="Unsure" />Unsure</label></div>
+<label><input type="radio" name="optionsPositiveTone" ng-model="classroom.positiveTone" value="Unsure" ng-required="!classroom.positiveTone" />Unsure</label>
+
+</div>
+<span ng-show="formStep3.form.optionsPositiveTone.$error.required && require3">required field</span>
 </div>
 </div>
 
@@ -62,11 +74,14 @@
 <label class="col-lg-10">(any instance in the observed duration)</label>
  <div class="col-lg-9">
  <div class="radio">
-<label><input type="radio" ng-model="classroom.negativeTone" value="Yes" />Yes</label></div>
+<label><input type="radio" name="optionsNegativeTone" ng-model="classroom.negativeTone" value="Yes" ng-required="!classroom.negativeTone" />Yes</label></div>
 <div class="radio">
-<label><input type="radio" ng-model="classroom.negativeTone" value="No" />No</label></div>
+<label><input type="radio" name="optionsNegativeTone" ng-model="classroom.negativeTone" value="No" ng-required="!classroom.negativeTone" />No</label></div>
 <div class="radio">
-<label><input type="radio" ng-model="classroom.negativeTone" value="Unsure" />Unsure</label></div>
+<label><input type="radio" name="optionsNegativeTone" ng-model="classroom.negativeTone" value="Unsure" ng-required="!classroom.negativeTone" />Unsure</label>
+
+</div>
+<span ng-show="formStep3.form.optionsNegativeTone.$error.required && require3">required field</span>
 </div>
 </div>
 
@@ -75,11 +90,14 @@
 <label class="col-lg-10">(uses a friendly yet assertive tone/ tries attention grabbers other than banging the duster/ reinforces instructions instead of rhetoric questions etc)</label>
  <div class="col-lg-9">
  <div class="radio">
-<label><input type="radio" ng-model="classroom.friendlyTone" value="Yes" />Yes</label></div>
+<label><input type="radio" name="optionsfriendlyTone" ng-model="classroom.friendlyTone" value="Yes" ng-required="!classroom.friendlyTone" />Yes</label></div>
 <div class="radio">
-<label><input type="radio" ng-model="classroom.friendlyTone" value="No" />No</label></div>
+<label><input type="radio" name="optionsfriendlyTone" ng-model="classroom.friendlyTone" value="No" ng-required="!classroom.friendlyTone" />No</label></div>
 <div class="radio">
-<label><input type="radio" ng-model="classroom.friendlyTone" value="Unsure" />Unsure</label></div>
+<label><input type="radio" name="optionsfriendlyTone" ng-model="classroom.friendlyTone" value="Unsure" ng-required="!classroom.friendlyTone" />Unsure</label>
+
+</div>
+<span ng-show="formStep3.form.optionsfriendlyTone.$error.required && require3">required field</span>
 </div>
 </div>
 
@@ -88,11 +106,13 @@
 <label class="col-lg-10">((for the observed duration)</label>
  <div class="col-lg-9">
  <div class="radio">
-<label><input type="radio" ng-model="classroom.overallPlan" value="Yes" />Yes</label></div>
+<label><input type="radio" name="OverallPlan" ng-model="classroom.overallPlan" value="Yes" ng-required="!classroom.overallPlan" />Yes</label></div>
 <div class="radio">
-<label><input type="radio" ng-model="classroom.overallPlan" value="No" />No</label></div>
+<label><input type="radio" name="OverallPlan" ng-model="classroom.overallPlan" value="No" ng-required="!classroom.overallPlan" />No</label></div>
 <div class="radio">
-<label><input type="radio" ng-model="classroom.overallPlan" value="Unsure" />Unsure</label></div>
+<label><input type="radio" name="OverallPlan" ng-model="classroom.overallPlan" value="Unsure" ng-required="!classroom.overallPlan" />Unsure</label>
+<span ng-show="formStep3.form.OverallPlan.$error.required && require3">required field</span>
+</div>
 </div>
 </div>
 

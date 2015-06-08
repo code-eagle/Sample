@@ -40,7 +40,7 @@
 						   <input type="text" ng-model="classroom.otherSchool" class="margin10 input-sm" ng-show="classroom.school=='option5'">
                       </div>
 				
-					  <span ng-show="formStep1.form.optionsRadios.$error.required && require">required field</span> 
+					  <span class="label label-danger" ng-show="formStep1.form.optionsRadios.$error.required && require">This is a mandatory field</span> 
                     </div>
                   </div>
                 </fieldset>
@@ -70,7 +70,7 @@
   <label class="col-sm-3 control-label">Students Present</label>
   <div class="col-sm-3">
   <input type="text" class="form-control input-sm" name="textStudentPresent" ng-model="classroom.studentPresent" ng-required="isRequired">
-  <span ng-show="formStep1.form.textStudentPresent.$error.required && require">required field</span>
+  <span class="label label-danger" ng-show="formStep1.form.textStudentPresent.$error.required && require">This is a mandatory field</span>
   </div>
 </div>
 </fieldset>
@@ -110,7 +110,7 @@
           </label>
 		<input type="text" ng-model="classroom.othersubject" class="margin10 input-sm" ng-show="classroom.subject=='Others'">
     </div>
-<span ng-show="formStep1.form.optionssubject.$error.required && require">required field</span> 	
+<span class="label label-danger" ng-show="formStep1.form.optionssubject.$error.required && require">This is a mandatory field</span> 	
 </div>
 
 </div>
@@ -127,7 +127,7 @@
    <div class="radio">
      <label><input type="radio" name="optionsinfo" ng-model="classroom.info" value="No" ng-required="!classroom.info" />No</label>
     </div>
-	 <span ng-show="formStep1.form.optionsinfo.$error.required && require">required field</span> 
+	 <span class="label label-danger" ng-show="formStep1.form.optionsinfo.$error.required && require">This is a mandatory field</span> 
   </div>
  
 </div>
@@ -138,7 +138,7 @@
   <label class="col-sm-3 control-label">Teacher Name/Reft</label>
   <div class="col-sm-3">
   <input type="text" name="textTeacher" class="form-control  input-sm" ng-model="classroom.Teacher" ng-required="isRequired">
-  <span ng-show="formStep1.form.textTeacher.$error.required && require">required field</span>
+  <span class="label label-danger" ng-show="formStep1.form.textTeacher.$error.required && require">This is a mandatory field</span>
   </div>
   </div>
 </div>
@@ -165,7 +165,7 @@
    <div class="radio">
     <label><input type="radio" name="optionsslot" ng-model="classroom.slot" value="Half-way(15-20 minutes after class start)" ng-required="!classroom.slot" />Half-way(15-20 minutes after class start)</label>
   </div>
-  <span ng-show="formStep1.form.optionsslot.$error.required && require">required field</span> 
+  <span class="label label-danger" ng-show="formStep1.form.optionsslot.$error.required && require">This is a mandatory field</span> 
 </div>
 
 </div>
@@ -183,7 +183,7 @@
    <div class="radio">
     <label><input type="radio" name="optionstime"  ng-model="classroom.time" value=" Post-lunch session" ng-required="!classroom.time" />Post-lunch session</label>
     </div>
-	  <span ng-show="formStep1.form.optionstime.$error.required && require">required field</span>
+	  <span class="label label-danger" ng-show="formStep1.form.optionstime.$error.required && require">This is a mandatory field</span>
   </div>
 
 </div>
@@ -210,16 +210,17 @@
   <div class="col-sm-offset-3 col-sm-2">
     <div class="radio">
         <label><input type="radio" name="optionsobserver" ng-model="classroom.observer" value="other" ng-required="!classroom.observer" />Others</label>
-		 <span ng-show="formStep1.form.optionsobserver.$error.required && require">required field</span>
+		 <span class="label label-danger" ng-show="formStep1.form.optionsobserver.$error.required && require">This is a mandatory field</span>
        <input type="text" ng-model="classroom.otherobserver" class="margin10 input-sm" ng-show="classroom.observer=='other'">
     </div>
   </div>
 
   <div class="form-group">
- 
+	
     <div class="col-lg-1 col-lg-offset-10">
 	
        <button type="button" ng-click="stepTwo()" class="col-sm-offset-2 btn btn-info">Next</button>
+	   
     </div>
   </div>
  

@@ -31,6 +31,11 @@ var checkLoggedIn = function($rootScope,$state){
     templateUrl:'templates/signup.html',
    controller:'SignUpCtrl'
   })
+  
+    .state('confirmation', {
+    url:'/confirmation',
+    templateUrl:'templates/confirmation.html'
+  })
 
   .state('about', {
     url:'/about',
@@ -53,7 +58,7 @@ var checkLoggedIn = function($rootScope,$state){
 // =============================================================================
 .controller('HomeCtrl',['$scope','$rootScope','$firebaseAuth','$state','SessionData','loginService', function($scope,$rootScope,$firebaseAuth,$state,SessionData,loginService) {
 	$scope.login={}
-
+	$rootScope.bgClass=true;
 $scope.isRequired = false;
 	$scope.signin = function(){
 
@@ -93,7 +98,7 @@ if($scope.login.$invalid)
 }])
 
 .controller('SignUpCtrl', ['$scope','$state','$firebaseAuth', function($scope,$state,$firebaseAuth){
-
+	$rootScope.bgClass=true;
     $scope.login={};
     $scope.isRequired = false;
     var firebaseObj = new Firebase("https://glowing-inferno-5931.firebaseio.com");
@@ -115,7 +120,7 @@ if($scope.login.$invalid)
 	var obj={};
         obj.email = $scope.login.username;
         obj.password = $scope.login.password;
-
+		obj.school = $scope.login.school
         loginObj.$createUser(obj)
             .then(function() {
                 // do things if success
@@ -130,14 +135,15 @@ if($scope.login.$invalid)
 }])
 
 
-.controller('formController', function($scope,$state,$rootScope,dataservice,loginService) {
-	console.log("Controller loadedddddddddd");
-$scope.logout=function(){
+.controller('formController', function($scope,$state,$rootScope,dataservice,loginService,SessionData) {
+	$rootScope.bgClass=false;
+	$scope.logout=function(){
 		loginService.logout();
 		$state.go('login');
 	}
 		
 		$scope.classroom={};
+		$scope.classroom.username=SessionData.getUser();
 		/* $scope.classroom.number="LKG";
 		$scope.classroom.school="option1";
 		$scope.classroom.subject="English";
@@ -206,6 +212,7 @@ $scope.logout=function(){
 				return;
 			}
 			dataservice.saveData($scope.classroom);
+			$state.go('confirmation');
 		}
 	
 

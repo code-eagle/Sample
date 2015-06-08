@@ -1,12 +1,12 @@
 <ng-include src="'templates/header.html'"></ng-include>
 <div class="container" >
 <div class="row">
-          <div class="col-lg-8 col-lg-offset-3">
+          <div class="col-lg-8 col-lg-offset-2">
           
         
             <div class="row bs-wizard" style="border-bottom:0;">
                 
-                <div class="col-xs-3 bs-wizard-step"  ng-class="{'complete' : step.switched == 'step2' || step.switched == 'step3', 'active' : step.switched == 'step1'  }">
+                <div class="col-xs-4 bs-wizard-step"  ng-class="{'complete' : step.switched == 'step2' || step.switched == 'step3', 'active' : step.switched == 'step1'  }">
 				
                   <div class="text-center bs-wizard-stepnum">Step 1</div>
                   <div class="progress"><div class="progress-bar"></div></div>
@@ -15,7 +15,7 @@
                   <div class="bs-wizard-info text-center">Question Set -1</div>
                 </div>
                 
-                <div class="col-xs-3 bs-wizard-step" ng-class="{'complete' : step.switched == 'step3'  }"><!-- complete -->
+                <div class="col-xs-4 bs-wizard-step" ng-class="{'complete' : step.switched == 'step3'  }"><!-- complete -->
                   <div class="text-center bs-wizard-stepnum">Step 2</div>
                   <div class="progress"><div class="progress-bar"></div></div>
 				  
@@ -23,7 +23,7 @@
                   <div class="bs-wizard-info text-center">Question Set -2</div>
                 </div>
                 
-                <div class="col-xs-3 bs-wizard-step" ><!-- complete -->
+                <div class="col-xs-4 bs-wizard-step" ><!-- complete -->
                   <div class="text-center bs-wizard-stepnum">Step 3</div>
                   <div class="progress"><div class="progress-bar"></div></div>
 				 

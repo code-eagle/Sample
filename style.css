@@ -160,3 +160,7 @@ body {
 .bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
 .bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
 /*END Form Wizard*/
+
+.bg-login { background:url('img/cloud.png') no-repeat; 
+background-color: rgba(12, 19, 29, 0.94);
+background-size: cover;}

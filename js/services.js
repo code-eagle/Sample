@@ -12,7 +12,8 @@ angular.module('classroomApp')
 		},
 		logout:function(){
 			loginObj.$unauth();
-		}
+		},
+		authObj:loginObj
 		
 	}
 }])

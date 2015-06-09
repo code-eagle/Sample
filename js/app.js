@@ -77,6 +77,7 @@ if($scope.login.$invalid)
             //Success callback
             console.log('Authentication successful');
             SessionData.setUser(username);
+            window.localStorage.setItem("loggedin",true);
             $state.go('userHome');
 
         }, function(error) {
@@ -247,7 +248,8 @@ angular.module('classroomApp').run(function($rootScope,$state,loginService){
       function(event, toState, toParams, fromState, fromParams){ 
 	  console.log(toState)
 	  if(toState.name !== "login"){
-	  if(!loginService.authObj.$getAuth()){
+//	  if(!loginService.authObj.$getAuth()){
+	if(window.localStorage.getItem("loggedin")){
 		 event.preventDefault(); 
 			$state.go('login');
 		} 

@@ -7,9 +7,10 @@ angular.module('classroomApp', ['ngAnimate', 'ui.router','firebase','angular-loa
 // =============================================================================
 .config(function($stateProvider, $urlRouterProvider) {
 
-var checkLoggedIn = function($rootScope,$state){
-	if(!$rootScope.user){
-		$state.go('login')
+var checkLoggedIn = function($rootScope,$state,loginService){
+	
+	if(!loginService.authObj.$getAuth()){
+		$state.go('login');
 	}
 };
   $stateProvider
@@ -22,7 +23,8 @@ var checkLoggedIn = function($rootScope,$state){
   .state('userHome', {
     url:'/userHome',
     templateUrl:'templates/home.html',
-    controller:'formController'
+    controller:'formController'//,
+	//resolve: { loggedin: checkLoggedIn }
   })
 
   .state('signup', {
@@ -47,7 +49,7 @@ var checkLoggedIn = function($rootScope,$state){
     controller:'DemoCtrl'
   })
 
- $urlRouterProvider.otherwise('/userHome');
+  $urlRouterProvider.otherwise('/userHome');
 })
 
 
@@ -77,7 +79,7 @@ if($scope.login.$invalid)
             //Success callback
             console.log('Authentication successful');
             SessionData.setUser(username);
-         //   window.localStorage.setItem("loggedin",true);
+		//	window.localStorage.setItem("loggedin",true);
             $state.go('userHome');
 
         }, function(error) {
@@ -97,7 +99,7 @@ if($scope.login.$invalid)
 	
 }])
 
-.controller('SignUpCtrl', ['$scope','$state','$firebaseAuth','$rootScope', function($scope,$state,$firebaseAuth,$rootScope){
+.controller('SignUpCtrl', ['$scope','$state','$firebaseAuth', function($scope,$state,$firebaseAuth){
 	$rootScope.bgClass=true;
     $scope.login={};
     $scope.isRequired = false;
@@ -242,6 +244,7 @@ var compareTo = function() {
 
 angular.module('classroomApp').directive("compareTo", compareTo);
 
+
 angular.module('classroomApp').run(function($rootScope,$state,loginService){ 
 
 	$rootScope.$on('$stateChangeStart', 
@@ -249,7 +252,7 @@ angular.module('classroomApp').run(function($rootScope,$state,loginService){
 	  console.log(toState)
 	  if(toState.name !== "login"){
 	  if(!loginService.authObj.$getAuth()){
-//	if(window.localStorage.getItem("loggedin")){
+	 // if(!window.localStorage.getItem("loggedin")){
 		 event.preventDefault(); 
 			$state.go('login');
 		} 
@@ -258,6 +261,5 @@ angular.module('classroomApp').run(function($rootScope,$state,loginService){
           // a 'transition prevented' error
  })
  });
-
 
 

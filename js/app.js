@@ -22,8 +22,7 @@ var checkLoggedIn = function($rootScope,$state){
   .state('userHome', {
     url:'/userHome',
     templateUrl:'templates/home.html',
-    controller:'formController',
-	resolve: { loggedin: checkLoggedIn }
+    controller:'formController'
   })
 
   .state('signup', {
@@ -242,7 +241,21 @@ var compareTo = function() {
 
 angular.module('classroomApp').directive("compareTo", compareTo);
 
+angular.module('classroomApp').run(function($rootScope,$state,loginService){ 
 
+	$rootScope.$on('$stateChangeStart', 
+      function(event, toState, toParams, fromState, fromParams){ 
+	  console.log(toState)
+	  if(toState.name !== "login"){
+	  if(!loginService.authObj.$getAuth()){
+		 event.preventDefault(); 
+			$state.go('login');
+		} 
+      }   
+          // transitionTo() promise will be rejected with 
+          // a 'transition prevented' error
+ })
+ });
 
 
 

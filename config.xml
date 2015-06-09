@@ -12,7 +12,9 @@
     <description>
         An example for phonegap build docs. 
     </description>
-
+<feature name="InAppBrowser">
+    <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+</feature>
 <gap:plugin name="org.apache.cordova.splashscreen" />
 
 <gap:splash src="splash.png"/>

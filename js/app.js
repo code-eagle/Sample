@@ -139,6 +139,7 @@ if($scope.login.$invalid)
 
 .controller('formController', function($scope,$state,$rootScope,dataservice,loginService,SessionData) {
 	$rootScope.bgClass=false;
+	dataservice.syncData();
 	$scope.logout=function(){
 		loginService.logout();
 		$state.go('login');

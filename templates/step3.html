@@ -18,7 +18,7 @@
 <label><input type="radio" name="optionsOrder"  ng-model="classroom.order" value="Unclear" ng-required="!classroom.order" />Unclear</label>
  
 </div>
-<span ng-show="formStep3.form.optionsOrder.$error.required && require3">required field</span>
+<span class="label label-danger" ng-show="formStep3.form.optionsOrder.$error.required && require3">Required field</span>
 </div>
 </div>
 <div class="form-group">
@@ -33,7 +33,7 @@
 <label><input type="radio" name="optionsEffectiveTime" ng-model="classroom.effectiveTime" value="Unsure" ng-required="!classroom.effectiveTime"/> Unsure</label>
 
 </div>
-<span ng-show="formStep3.form.optionsEffectiveTime.$error.required && require3">required field</span> 
+<span class="label label-danger" ng-show="formStep3.form.optionsEffectiveTime.$error.required && require3">Required field</span> 
 </div>
 </div>
 <div class="form-group">
@@ -48,7 +48,7 @@
 <label><input type="radio" name="optionsIneffectiveTime" ng-model="classroom.ineffectiveTime" value="Unsure" ng-required="!classroom.ineffectiveTime" />Unsure</label>
 
 </div>
-<span ng-show="formStep3.form.optionsIneffectiveTime.$error.required && require3">required field</span> 
+<span class="label label-danger" ng-show="formStep3.form.optionsIneffectiveTime.$error.required && require3">Required field</span> 
 </div>
 </div>
 
@@ -65,7 +65,7 @@
 <label><input type="radio" name="optionsPositiveTone" ng-model="classroom.positiveTone" value="Unsure" ng-required="!classroom.positiveTone" />Unsure</label>
 
 </div>
-<span ng-show="formStep3.form.optionsPositiveTone.$error.required && require3">required field</span>
+<span class="label label-danger" ng-show="formStep3.form.optionsPositiveTone.$error.required && require3">Required field</span>
 </div>
 </div>
 
@@ -81,7 +81,7 @@
 <label><input type="radio" name="optionsNegativeTone" ng-model="classroom.negativeTone" value="Unsure" ng-required="!classroom.negativeTone" />Unsure</label>
 
 </div>
-<span ng-show="formStep3.form.optionsNegativeTone.$error.required && require3">required field</span>
+<span class="label label-danger" ng-show="formStep3.form.optionsNegativeTone.$error.required && require3">Required field</span>
 </div>
 </div>
 
@@ -97,7 +97,7 @@
 <label><input type="radio" name="optionsfriendlyTone" ng-model="classroom.friendlyTone" value="Unsure" ng-required="!classroom.friendlyTone" />Unsure</label>
 
 </div>
-<span ng-show="formStep3.form.optionsfriendlyTone.$error.required && require3">required field</span>
+<span class="label label-danger" ng-show="formStep3.form.optionsfriendlyTone.$error.required && require3">Required field</span>
 </div>
 </div>
 
@@ -111,21 +111,40 @@
 <label><input type="radio" name="OverallPlan" ng-model="classroom.overallPlan" value="No" ng-required="!classroom.overallPlan" />No</label></div>
 <div class="radio">
 <label><input type="radio" name="OverallPlan" ng-model="classroom.overallPlan" value="Unsure" ng-required="!classroom.overallPlan" />Unsure</label>
-<span ng-show="formStep3.form.OverallPlan.$error.required && require3">required field</span>
+<span class="label label-danger" ng-show="formStep3.form.OverallPlan.$error.required && require3">Required field</span>
 </div>
 </div>
 </div>
-
-<label class="col-lg-12">Do you feel the above descriptors give are a fair representation of the teachers actions for the observed duration in class?</h3>
-	
+<div class="form-group">
+<label class="col-lg-12">Do you feel the above descriptors give are a fair representation of the teachers actions for the observed duration in class?</label>
+        
+    <div class="col-lg-9">
+                    <div class="radio">
+					<label><input type="radio" name="techerAction" ng-model="classroom.techerAction" value="1" ng-required="!classroom.techerAction" />1 - Strongly Disagree</label>
+					</div>
+        <div class="radio">
+					<label><input type="radio" name="techerAction" ng-model="classroom.techerAction" value="2" ng-required="!classroom.techerAction" />2</label>
+					</div>
+        <div class="radio">
+					<label><input type="radio" name="techerAction" ng-model="classroom.techerAction" value="3" ng-required="!classroom.techerAction" />3</label>
+					</div>
+        <div class="radio">
+					<label><input type="radio" name="techerAction" ng-model="classroom.techerAction" value="4" ng-required="!classroom.techerAction" />4</label>
+					</div>
+        <div class="radio">
+					<label><input type="radio" name="techerAction" ng-model="classroom.techerAction" value="5" ng-required="!classroom.techerAction" />1 - Strongly Agree</label>
+					</div>
+        
+        </div>
+    </div>
   <div class="form-group">
-  <div class="col-lg-1">
+  <div class="col-lg-1 col-sm-1">
 	
-       <button type="button" ng-click="stepTwo()" class="col-sm-offset-2 btn btn-info">Previous</button>
+       <button type="button" ng-click="stepTwoPrev()" class="col-sm-offset-2 btn btn-info">Previous</button>
 	   
     </div>
   
-    <div class="col-lg-1 col-lg-offset-8">
+    <div class="col-lg-1 col-lg-offset-8 col-sm-1 col-sm-offset-8">
        	<button type="button" ng-click="saveData()" class="col-sm-offset-2 btn btn-info">Submit</button>
     </div>
   </div>

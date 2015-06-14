@@ -146,7 +146,7 @@ if($scope.login.$invalid)
 	}
 		
 		$scope.classroom={};
-		$scope.classroom.username=SessionData.getUser();
+		$scope.classroom.username=loginService.authObj.$getAuth().password.email;
 		/* $scope.classroom.number="LKG";
 		$scope.classroom.school="option1";
 		$scope.classroom.subject="English";
@@ -192,6 +192,7 @@ if($scope.login.$invalid)
 		$scope.formStep2={"form":{}};
 		$scope.formStep3={"form":{}};
 		$scope.stepOne = function() {$scope.step.switched="step1";}
+        $scope.stepTwoPrev = function() {$scope.step.switched="step2";}
 		$scope.stepTwo = function() {
 		$scope.require=true;
 		$scope.isRequired = true;
@@ -250,7 +251,7 @@ angular.module('classroomApp').run(function($rootScope,$state,loginService){
 
 	$rootScope.$on('$stateChangeStart', 
       function(event, toState, toParams, fromState, fromParams){ 
-	  console.log(toState)
+	//  console.log(loginService.authObj.$getAuth().password.email)
 	  if(toState.name !== "login"){
 	  if(!loginService.authObj.$getAuth()){
 	 // if(!window.localStorage.getItem("loggedin")){

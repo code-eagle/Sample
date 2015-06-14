@@ -29,7 +29,7 @@
 					<input type="text" ng-model="classroom.othertask" class="margin10 input-sm" ng-show="classroom.task=='other'">
 					
 					</div>
-					<span ng-show="formStep2.form.optionsTask.$error.required && require2">required field</span>
+					<span class="label label-danger" ng-show="formStep2.form.optionsTask.$error.required && require2">Required field</span>
                      </div>
 					 </div>
 					<div class="form-group">
@@ -51,7 +51,7 @@
 					 <label><input type="radio" name="optionsEngaged" ng-model="classroom.engaged" value="other" ng-required="!classroom.engaged" />Others</label>
 					 <input type="text" ng-model="classroom.otherengaged" class="margin10 input-sm" ng-show="classroom.engaged=='other'">
 						</div>
-					 <span ng-show="formStep2.form.optionsEngaged.$error.required && require2">required field</span>
+					 <span class="label label-danger" ng-show="formStep2.form.optionsEngaged.$error.required && require2">Required field</span>
 					</div>
 					</div>
 					<div class="form-group">
@@ -75,19 +75,38 @@
 					<input type="text" ng-model="classroom.otherlearning" class="margin10 input-sm" ng-show="classroom.learning=='other'">
 					
 					</div>
-		<span ng-show="formStep2.form.optionsLearning.$error.required && require2">required field</span>
+		<span class="label label-danger" ng-show="formStep2.form.optionsLearning.$error.required && require2">Required field</span>
 					</div>
-
+ <div class="form-group">
 <label class="col-lg-12">Do you feel the above descriptors give are a fair representation of the student engagement observed in class?</label>
-
+     
+      <div class="col-lg-9">
+                    <div class="radio">
+					<label><input type="radio" name="studentEngagement" ng-model="classroom.studentEngagement" value="1" ng-required="!classroom.studentEngagement" />1 - Strongly Disagree</label>
+					</div>
+					  <div class="radio">
+					<label><input type="radio" name="studentEngagement" ng-model="classroom.studentEngagement" value="2" ng-required="!classroom.studentEngagement" />2</label>
+					</div>
+            <div class="radio">
+					<label><input type="radio" name="studentEngagement" ng-model="classroom.studentEngagement" value="3" ng-required="!classroom.studentEngagement" />3</label>
+					</div>
+            <div class="radio">
+					<label><input type="radio" name="studentEngagement" ng-model="classroom.studentEngagement" value="4" ng-required="!classroom.studentEngagement" />4</label>
+					</div>
+            <div class="radio">
+					<label><input type="radio" name="studentEngagement" ng-model="classroom.studentEngagement" value="5" ng-required="!classroom.studentEngagement" />5  - Strongly Agree</label>
+					</div>
+					<span class="label label-danger" ng-show="formStep2.form.studentEngagement.$error.required && require2">Required field</span>
+                     </div>
+                        </div>
 
   <div class="form-group">
-  <div class="col-lg-1">
+  <div class="col-lg-1 col-sm-1">
 	
        <button type="button" ng-click="stepOne()" class="col-sm-offset-2 btn btn-info">Previous</button>
 	   
     </div>
-    <div class="col-lg-1 col-lg-offset-8">
+    <div class="col-lg-1 col-lg-offset-8 col-sm-1 col-sm-offset-8">
        	<button type="button" ng-click="stepThree()" class="col-sm-offset-2 btn btn-info">Next</button>
     </div>
   </div>

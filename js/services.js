@@ -82,17 +82,16 @@ angular.module('classroomApp')
 				tmpArr.forEach(function(obj){
 						dataArray.$add(obj).then
 					 (function(res){
-					 window.localStorage.removeItem("unsyncdata");
-                    window.localStorage.clear();
-                     localArr=null;
 					 console.log(res); 
 					 },
 					 function(err){
-                    localArr=null;
+                //    localArr=null;
 					 console.log(err);
 					 }
 					 );
 				})
+                window.localStorage.removeItem("unsyncdata");
+                     localArr=null;
 		  }
 		});
 		

@@ -58,7 +58,7 @@ angular.module('classroomApp')
 		 else{
 		 var localArr=window.localStorage.getItem("unsyncdata");
 		 if(localArr){
-             localArr=JSON.stringify(localArr);
+             localArr=JSON.parse(localArr);
 		 localArr.push(data);
 		 window.localStorage.setItem("unsyncdata",JSON.stringify(localArr));
 		 }

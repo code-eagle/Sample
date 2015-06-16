@@ -252,7 +252,7 @@ angular.module('classroomApp').run(function($rootScope,$state,loginService){
 	$rootScope.$on('$stateChangeStart', 
       function(event, toState, toParams, fromState, fromParams){ 
 	//  console.log(loginService.authObj.$getAuth().password.email)
-	  if(toState.name !== "login"){
+	  if(toState.name !== "login" && toState.name !== "signup"){
 	  if(!loginService.authObj.$getAuth()){
 	 // if(!window.localStorage.getItem("loggedin")){
 		 event.preventDefault(); 

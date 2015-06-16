@@ -58,6 +58,7 @@ angular.module('classroomApp')
 		 else{
 		 var localArr=window.localStorage.getItem("unsyncdata");
 		 if(localArr){
+             localArr=JSON.stringify(localArr);
 		 localArr.push(data);
 		 window.localStorage.setItem("unsyncdata",JSON.stringify(localArr));
 		 }
@@ -82,9 +83,12 @@ angular.module('classroomApp')
 						dataArray.$add(obj).then
 					 (function(res){
 					 window.localStorage.removeItem("unsyncdata");
+                    window.localStorage.clear();
+                     localArr=null;
 					 console.log(res); 
 					 },
 					 function(err){
+                    localArr=null;
 					 console.log(err);
 					 }
 					 );

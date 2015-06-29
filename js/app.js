@@ -13,6 +13,8 @@ var checkLoggedIn = function($rootScope,$state,loginService){
 		$state.go('login');
 	}
 };
+
+    $urlRouterProvider.otherwise('/login');
   $stateProvider
   .state('login', {
     url:'/login',
@@ -25,7 +27,7 @@ var checkLoggedIn = function($rootScope,$state,loginService){
     templateUrl:'templates/home.html',
     controller:'formController'//,
 	//resolve: { loggedin: checkLoggedIn }
-  })
+  }) 
 
   .state('signup', {
     url:'/signup',
@@ -49,7 +51,7 @@ var checkLoggedIn = function($rootScope,$state,loginService){
     controller:'DemoCtrl'
   })
 
-  $urlRouterProvider.otherwise('/userHome');
+  
 })
 
 
@@ -61,6 +63,11 @@ var checkLoggedIn = function($rootScope,$state,loginService){
 	$scope.login={}
 	$rootScope.bgClass=true;
 $scope.isRequired = false;
+    
+     if(loginService.authObj.$getAuth()){
+			$state.go('userHome');
+		} 
+    
 	$scope.signin = function(){
 
 $scope.isRequired = true;
@@ -99,7 +106,7 @@ if($scope.login.$invalid)
 	
 }])
 
-.controller('SignUpCtrl', ['$scope','$rootScope','$state','$firebaseAuth', function($scope,$rootScope,$state,$firebaseAuth){
+.controller('SignUpCtrl', ['$scope','$state','$firebaseAuth','$rootScope', function($scope,state,$firebaseAuth,$rootScope){
 	$rootScope.bgClass=true;
     $scope.login={};
     $scope.isRequired = false;
@@ -252,13 +259,28 @@ angular.module('classroomApp').run(function($rootScope,$state,loginService){
 	$rootScope.$on('$stateChangeStart', 
       function(event, toState, toParams, fromState, fromParams){ 
 	//  console.log(loginService.authObj.$getAuth().password.email)
-	  if(toState.name !== "login" && toState.name !== "signup"){
+     /*   switch(toState.name){
+            case "login":
+             //   $state.go('login');
+                break;
+            case "signup":
+             //   $state.go('signup');
+                break;
+            default:
+                  if(!loginService.authObj.$getAuth()){
+                 event.preventDefault(); 
+                    $state.go('login');
+                }
+        }  */
+	 if(!(toState.name == "login" || toState.name == "signup")){
 	  if(!loginService.authObj.$getAuth()){
 	 // if(!window.localStorage.getItem("loggedin")){
 		 event.preventDefault(); 
 			$state.go('login');
 		} 
-      }   
+      }
+        else
+            return;
           // transitionTo() promise will be rejected with 
           // a 'transition prevented' error
  })

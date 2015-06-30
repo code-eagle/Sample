@@ -99,7 +99,7 @@ if($scope.login.$invalid)
 	
 }])
 
-.controller('SignUpCtrl', ['$scope','$state','$firebaseAuth', function($scope,$state,$firebaseAuth){
+.controller('SignUpCtrl', ['$scope','$state','$firebaseAuth','$rootScope', function($scope,$state,$firebaseAuth,$rootScope){
 	$rootScope.bgClass=true;
     $scope.login={};
     $scope.isRequired = false;
